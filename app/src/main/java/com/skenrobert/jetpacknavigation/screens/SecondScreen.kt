@@ -19,15 +19,13 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.skenrobert.jetpacknavigation.navigation.AppScreens
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SecondScreen(navController: NavController){
+fun SecondScreen(navController: NavController, name: String?){
     Scaffold(contentWindowInsets = WindowInsets(16.dp),
         topBar = {
             TopAppBar(
@@ -41,12 +39,12 @@ fun SecondScreen(navController: NavController){
                 })
         }
     ) {
-        SecondBodyContent(navController)
+        SecondBodyContent(navController, name)
     }
 }
 
 @Composable
-fun SecondBodyContent(navController: NavController) {
+fun SecondBodyContent(navController: NavController, name: String?) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -59,6 +57,14 @@ fun SecondBodyContent(navController: NavController) {
             navController.popBackStack()
         }) {
             Text(text = "Back nave")
+
+//            if (name != null) {
+//                Text(text = name)
+//            }
+        }
+
+        name?.let {
+            Text(it)
         }
     }
 }

@@ -56,6 +56,7 @@ fun BodyContent(navController: NavController) {
 
     ) {
         Text(text = "hi first navigation")
+        //Menu
         Button(onClick = {
             navController.navigate(route = AppScreens.SecondScreen.route + "/robert")
         }) {
@@ -66,6 +67,12 @@ fun BodyContent(navController: NavController) {
             navController.navigate(route = AppScreens.ThreeScreen.route)
         }) {
             Text(text = "Static List")
+        }
+
+        Button(onClick = {
+            navController.navigate(route = AppScreens.LoginScreen.route)
+        }) {
+            Text(text = "Login")
         }
     }
 }

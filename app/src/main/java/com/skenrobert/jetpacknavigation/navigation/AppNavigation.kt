@@ -9,6 +9,7 @@ import androidx.navigation.navArgument
 import com.skenrobert.jetpacknavigation.screens.FirstScreen
 import com.skenrobert.jetpacknavigation.screens.SecondScreen
 import com.skenrobert.jetpacknavigation.screens.ThreeScreen
+import com.skenrobert.jetpacknavigation.screens.LoginScreen
 
 
 @Composable
@@ -32,6 +33,9 @@ fun AppNavigation(){
                 ThreeScreen(navController)
             }
 
+            composable(route = AppScreens.LoginScreen.route){
+                LoginScreen(navController)
+            }
     }
 
 }

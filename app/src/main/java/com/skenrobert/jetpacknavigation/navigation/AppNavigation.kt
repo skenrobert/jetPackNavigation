@@ -6,12 +6,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.skenrobert.jetpacknavigation.screens.FetchTestScreen
 import com.skenrobert.jetpacknavigation.screens.FirstScreen
 import com.skenrobert.jetpacknavigation.screens.SecondScreen
 import com.skenrobert.jetpacknavigation.screens.ThreeScreen
 import com.skenrobert.jetpacknavigation.screens.login.LoginScreen
 
 import com.skenrobert.jetpacknavigation.screens.login.LoginViewModel
+
 
 
 @Composable
@@ -37,6 +39,10 @@ fun AppNavigation(){
 
             composable(route = AppScreens.LoginScreen.route){
                 LoginScreen(navController, LoginViewModel())// send LoginViewModel
+            }
+
+            composable(route = AppScreens.FetchTestScreen.route){
+                FetchTestScreen(navController)//
             }
     }
 

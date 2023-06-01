@@ -15,40 +15,37 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.NavType
-import androidx.navigation.navArgument
 import com.skenrobert.jetpacknavigation.navigation.AppScreens
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FirstScreen(navController: NavController){
+fun FetchTestScreen(navController: NavController){
     //val snackbarHostState = remember { SnackbarHostState() }
-   // val scope = rememberCoroutineScope()
+    // val scope = rememberCoroutineScope()
 
     Scaffold(contentWindowInsets = WindowInsets(16.dp),
-            topBar = {
-                TopAppBar(
-                    title  = { Text(text = "Back");
+        topBar = {
+            TopAppBar(
+                title  = { Text(text = "Back");
 //                        Icon(imageVector = Icons.Default.ArrowBack,
 //                        contentDescription = "Arrow Back",
 //                        modifier = Modifier.clickable {
 //                            navController.popBackStack()
 //                        });
-                        Spacer(modifier = Modifier.width(16.dp))
-                    })
-            }
-        ) {
-        BodyContent(navController)
+                    Spacer(modifier = Modifier.width(16.dp))
+                })
+        }
+    ) {
+        BodyContent1(navController)
         //Text("Show snackbar")
     }
 }
 
 @Composable
-fun BodyContent(navController: NavController) {
+fun BodyContent1(navController: NavController) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -63,28 +60,16 @@ fun BodyContent(navController: NavController) {
             Text(text = "Nave")
         }
 
-        Button(onClick = {
-            navController.navigate(route = AppScreens.ThreeScreen.route)
-        }) {
-            Text(text = "Static List")
-        }
-
-        Button(onClick = {
-            navController.navigate(route = AppScreens.LoginScreen.route)
-        }) {
-            Text(text = "Login")
-        }
-
-        Button(onClick = {
-            navController.navigate(route = AppScreens.FetchTestScreen.route)
-        }) {
-            Text(text = "Fetch")
-        }
+//        Button(onClick = {
+//            navController.navigate(route = AppScreens.ThreeScreen.route)
+//        }) {
+//            Text(text = "Static List")
+//        }
+//
+//        Button(onClick = {
+//            navController.navigate(route = AppScreens.LoginScreen.route)
+//        }) {
+//            Text(text = "Login")
+//        }
     }
 }
-
-//@Preview(showBackground = true)
-//@Composable
-//fun DefaultPreview(){
-//    FirstScreen()
-//}

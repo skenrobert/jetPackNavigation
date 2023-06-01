@@ -5,4 +5,6 @@ sealed class AppScreens (val route: String) {
     object SecondScreen: AppScreens("second_screen")
     object ThreeScreen: AppScreens("three_screen")
     object LoginScreen: AppScreens("Login_screen")
+
+    object FetchTestScreen: AppScreens("fetch_test")
 }
